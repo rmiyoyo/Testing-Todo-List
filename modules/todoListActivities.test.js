@@ -1,6 +1,64 @@
 import AvailableActivities from './todoListActivities.js';
 
+describe('AvailableActivities', () => {
+  describe('addActivity', () => {
+    describe('addActivity', () => {
+      beforeEach(() => {
+        global.localStorage = {
+          getItem: jest.fn(),
+          setItem: jest.fn(),
+          clear: jest.fn(),
+        };
+        localStorage.clear();
+      });
 
+      // Test 1
+      test('should add a new activity to the activities array and update the DOM', () => {
+        const listElement = document.createElement('ul');
+        const activities = new AvailableActivities();
+        const activity = {
+          description: 'New Activity',
+          completed: false,
+          index: 1,
+        };
+
+        const setItemMock = jest.spyOn(Storage.prototype, 'setItem');
+        const result = activities.addActivity(activity, listElement);
+
+        expect(result).toHaveLength(1);
+        expect(result[0]).toEqual(activity);
+        expect(listElement.children).toHaveLength(1);
+        expect(listElement.children[0].textContent).toBe(
+          'New Activity',
+        );
+        expect(setItemMock).toHaveBeenCalledWith(
+          'savedActivities',
+          JSON.stringify(result),
+        );
+      });
+
+      // Test 2
+      test('should not add an activity with an empty description and not update the DOM', () => {
+        const listElement = document.createElement('ul');
+        const activities = new AvailableActivities();
+        const activity = {
+          description: '',
+          completed: false,
+          index: 1,
+        };
+
+        const setItemMock = jest.spyOn(localStorage, 'setItem');
+        const result = activities.addActivity(activity, listElement);
+
+        expect(result).toHaveLength(0);
+        expect(listElement.children).toHaveLength(0);
+        expect(setItemMock).not.toHaveBeenCalledWith(
+          'savedActivities',
+          JSON.stringify(result),
+        );
+      });
+    });
+  });
 
   describe('removeActivity', () => {
     describe('removeActivity', () => {
