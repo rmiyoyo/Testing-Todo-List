@@ -17,7 +17,7 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  background-color: #e0ffff;
+  background-color: #4682b4;
   height: auto;
 }
 
@@ -32,6 +32,9 @@ body {
 }
 
 .app-header {
+  font-size: large;
+  font-weight: bolder;
+  color: #708090;
   border-bottom: 1px solid #708090;
   height: 44px;
   align-items: center;
@@ -147,6 +150,9 @@ i.modify {
 }
 
 .delete-finished-activities {
+  font-size: large;
+  font-weight: bolder;
+  color: #ffd700;
   height: 50px;
   align-items: center;
   justify-content: center;
@@ -154,6 +160,7 @@ i.modify {
 }
 
 .delete-finished-activities:hover {
+  color: #ff8c00;
   cursor: url('../icons/pntr.png'), move;
   text-decoration: underline;
 }
