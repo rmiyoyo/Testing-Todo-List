@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1692870102196" clover="3.2.0">
-  <project timestamp="1692870102196" name="All files">
+<coverage generated="1692973759071" clover="3.2.0">
+  <project timestamp="1692973759071" name="All files">
     <metrics statements="35" coveredstatements="19" conditionals="8" coveredconditionals="4" methods="7" coveredmethods="3" elements="50" coveredelements="26" complexity="0" loc="35" ncloc="35" packages="1" files="1" classes="1"/>
     <file name="todoListActivities.js" path="/home/kifaru/Microverse/Testing-Todo-List/modules/todoListActivities.js">
       <metrics statements="35" coveredstatements="19" conditionals="8" coveredconditionals="4" methods="7" coveredmethods="3"/>
