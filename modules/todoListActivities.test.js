@@ -4,7 +4,7 @@ describe('AvailableActivities', () => {
   describe('addActivity', () => {
     describe('addActivity', () => {
       beforeEach(() => {
-        global.localStorage = {
+        window.localStorage = {
           getItem: jest.fn(),
           setItem: jest.fn(),
           clear: jest.fn(),
